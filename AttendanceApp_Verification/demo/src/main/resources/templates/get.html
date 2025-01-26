@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h2>【Get】</h2>
+    <h3 th:text="${list}"></h3>
+
+    <tr th:each="userInfo:${list}" th:object="${userInfo}">
+      <td th:text="*{userId}"></td>
+      <td th:text="*{userName}"></td>
+      <td th:text="*{userBody}"></td>
+    </tr>
+  </body>
+</html>

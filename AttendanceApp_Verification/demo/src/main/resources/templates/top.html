@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <h2>【New Post】</h2>
+    <form th:action="@{/create}" th:object="${userInfo}" method="post">
+      <label>UserName</label>
+      <p><input type="text" th:field="*{userName}" /></p>
+
+      <label>UserBody</label>
+      <p><textarea id="form" th:field="*{userBody}"></textarea></p>
+      <p><input type="submit" value="送信" id="button" /></p>
+    </form>
+    <table border="1">
+      <tr>
+        <th>UserID</th>
+        <th>UesrName</th>
+        <th>UserBody</th>
+      </tr>
+      <tr th:each="userInfo:${userList}" th:object="${userInfo}">
+        <td th:text="*{userId}"></td>
+        <td th:text="*{userName}"></td>
+        <td th:text="*{userBody}"></td>
+      </tr>
+    </table>
+  </body>
+</html>

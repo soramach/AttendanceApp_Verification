@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Result View</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+
+  <body>
+    <div>
+      <p th:text="'id  : ' + ${userInfo.userId}" />
+      <p th:text="'Name: ' + ${userInfo.userName}" />
+      <p th:text="'Body: ' + ${userInfo.userBody}" />
+      <p><a href="http://localhost:8080/">一覧画面へ</a></p>
+    </div>
+  </body>
+</html>
